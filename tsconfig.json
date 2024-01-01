@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "incremental": false
+    },
+    "extends": "./tsconfig.base.json",
+    "include": ["**/*.ts"]
+}
