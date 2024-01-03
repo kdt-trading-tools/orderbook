@@ -10,7 +10,7 @@ export class OrderBookStore<O extends OrderBookOptions = OrderBookOptions> {
         return this.books[symbol] ??= new OrderBook(this.options)
     }
 
-    public handleSnapshot(symbol: string, params: HandleSnapshotParams<O>) {
+    public handleSnapshot(symbol: string, params: HandleSnapshotParams) {
         return this.getBook(symbol).handleSnapshot(params as any)
     }
 
