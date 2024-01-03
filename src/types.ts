@@ -16,9 +16,7 @@ export interface UpdateParams {
 
 type CheckIdType<O extends OrderBookOptions> = O['checkId'] extends boolean ? O['checkId'] : true
 
-export type HandleSnapshotParams<O extends OrderBookOptions = OrderBookOptions> = UpdateParams & (
-    CheckIdType<O> extends true ? { lastUpdateId: number } : { lastUpdateId?: number }
-)
+export type HandleSnapshotParams = UpdateParams & { lastUpdateId?: number }
 
 export type HandleDeltaParams<O extends OrderBookOptions = OrderBookOptions> = UpdateParams & (
     CheckIdType<O> extends true ? { fromId: number; toId: number } : { fromId?: number; toId?: number }

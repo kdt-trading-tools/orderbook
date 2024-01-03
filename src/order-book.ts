@@ -50,7 +50,7 @@ export class OrderBook<O extends OrderBookOptions = OrderBookOptions> {
         return this.updatedAt
     }
 
-    public handleSnapshot(params: HandleSnapshotParams<O>) {
+    public handleSnapshot(params: HandleSnapshotParams) {
         this.reset()
         this.update(params, params.lastUpdateId)
     }
