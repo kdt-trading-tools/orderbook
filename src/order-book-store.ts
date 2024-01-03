@@ -11,11 +11,19 @@ export class OrderBookStore<O extends OrderBookOptions = OrderBookOptions> {
     }
 
     public handleSnapshot(symbol: string, params: HandleSnapshotParams) {
-        return this.getBook(symbol).handleSnapshot(params as any)
+        try {
+            return this.getBook(symbol).handleSnapshot(params as any)
+        } catch (error) {
+            throw new Error(`Failed to handle snapshot for symbol ${symbol}`, { cause: error })
+        }
     }
 
     public handleDelta(symbol: string, params: HandleDeltaParams<O>) {
-        return this.getBook(symbol).handleDelta(params as any)
+        try {
+            return this.getBook(symbol).handleDelta(params as any)
+        } catch (error) {
+            throw new Error(`Failed to handle delta for symbol ${symbol}`, { cause: error })
+        }
     }
 
     public reset(symbol: string) {
