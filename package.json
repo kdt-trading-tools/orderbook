@@ -1,6 +1,6 @@
 {
     "name": "@kdt-trading-tools/orderbook",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A library to create and manager a local order book",
     "license": "MIT",
     "author": "Diep Dang <khangdt310722@gmail.com>",
